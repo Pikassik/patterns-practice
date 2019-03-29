@@ -1,10 +1,10 @@
 #include <headers/common-figures/Bishop.h>
 
-std::vector<std::pair<int, int>> Bishop::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& Bishop::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> Bishop::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& Bishop::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

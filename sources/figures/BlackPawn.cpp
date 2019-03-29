@@ -1,10 +1,10 @@
 #include <headers/black-figures/BlackPawn.h>
 
-std::vector<std::pair<int, int>> BlackPawn::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& BlackPawn::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> BlackPawn::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& BlackPawn::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

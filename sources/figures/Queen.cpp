@@ -1,10 +1,10 @@
 #include <headers/common-figures/Queen.h>
 
-std::vector<std::pair<int, int>> Queen::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& Queen::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> Queen::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& Queen::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

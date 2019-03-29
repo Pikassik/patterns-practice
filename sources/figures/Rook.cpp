@@ -1,10 +1,10 @@
 #include <headers/common-figures/Rook.h>
 
-std::vector<std::pair<int, int>> Rook::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& Rook::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> Rook::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& Rook::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

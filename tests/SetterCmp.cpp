@@ -1,4 +1,5 @@
 #include <tests/SetterCmp.h>
+#include <headers/Unit.h>
 
 ::testing::AssertionResult MaxHpCmp(int expected, Unit* unit) {
   EXPECT_EQ(expected, unit->max_health_points_);
@@ -53,3 +54,4 @@
   return (expected == unit->color_) ? ::testing::AssertionSuccess()
                                     : ::testing::AssertionFailure();
 }
+

@@ -2,6 +2,7 @@
 #include <utility>
 #include <vector>
 #include <memory>
+#include <cmath>
 #include <gtest/gtest.h>
 
 class Unit {
@@ -18,10 +19,13 @@ class Unit {
 
   void Attack(std::shared_ptr<Unit>& attacked) const;
   void GetDamage(int damage);
-  bool GetColor();
-  virtual std::vector<std::pair<int, int>> GetPossibleMoves() = 0;
-  virtual std::vector<std::pair<int, int>> GetPossibleDamaged() = 0;
-  bool IsDead();
+
+  bool GetColor() const;
+  int GetCurrentHP() const;
+  int GetCurrentShield() const;
+  virtual const std::vector<std::pair<int, int>>& GetPossibleMoves() = 0;
+  virtual const std::vector<std::pair<int, int>>& GetPossibleDamaged() = 0;
+  bool IsDead() const;
 
   void SetMaxHP(int max_hp);
   void SetHP(int hp);
@@ -31,6 +35,11 @@ class Unit {
   void SetSelfHealingSpeed(int self_healing_speed);
   void SetAttackDamage(int attack_damage);
   void SetColor(bool color);
+
+  void GetHealing(int hp);
+  void GetShield(int shield);
+  void GetSelfHealing();
+  void GetSelfShieldRecover();
 
  protected:
 

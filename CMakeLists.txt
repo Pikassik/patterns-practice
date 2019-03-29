@@ -1,21 +1,12 @@
 cmake_minimum_required(VERSION 3.2)
-project(creational_patterns)
+project(patterns_practice)
 include(gtest.cmake)
 
 set(CMAKE_CXX_STANDARD 14)
 
-# find_package(GTest REQUIRED)
-
-# include_directories(${GTEST_INCLUDE_DIRS})
-
-
-
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
-
-
-
-add_executable(creational_patterns main.cpp headers/Board.h
+add_executable(patterns_practice main.cpp headers/Board.h
                 headers/Unit.h sources/Board.cpp sources/figures/Unit.cpp
                 headers/common-figures/King.h headers/common-figures/Rook.h
                 headers/common-figures/Bishop.h headers/common-figures/Queen.h
@@ -77,9 +68,19 @@ add_executable(creational_patterns main.cpp headers/Board.h
                 headers/SideFactory.h headers/factories/WhiteFactory.h
                 headers/factories/BlackFactory.h
                 sources/factories/WhiteFactory.cpp
-                sources/factories/BlackFactory.cpp tests/FiguresPossibleTest.cpp tests/SetterTest.cpp tests/BuildTest.cpp tests/SetterCmp.h tests/SetterCmp.cpp tests/FactoryTest.cpp tests/IsFigure.h tests/IsFigure.cpp tests/BoardTest.cpp)
+                sources/factories/BlackFactory.cpp
+                tests/FiguresPossibleTest.cpp
+                tests/SetterTest.cpp
+                tests/BuildTest.cpp
+                tests/SetterCmp.h
+                tests/SetterCmp.cpp
+                tests/FactoryTest.cpp
+                tests/IsFigure.h
+                tests/IsFigure.cpp
+                tests/BoardTest.cpp
+                sources/SquadComposite.cpp
+                headers/SquadComposite.h
+                headers/SquadCompositeCombatDecorator.h sources/SquadCompositeCombatDecorator.cpp headers/SelfShieldCommand.h headers/SelfHealCommand.h sources/SelfHealCommand.cpp sources/SelfShieldCommand.cpp headers/Game.h headers/GameObserver.h sources/Game.cpp headers/BattleObserver.h sources/BattleObserver.cpp headers/SelfHealObserver.h sources/SelfHealObserver.cpp headers/SelfShieldObserver.h sources/SelfShieldObserver.cpp headers/BoardConsoleViewObserver.h sources/BoardConsoleViewObserver.cpp tests/ObserversTest.cpp tests/CommandsTest.cpp tests/SquadCompositeTest.cpp)
 
 find_package(Threads)
-target_link_libraries(creational_patterns gtest ${CMAKE_THREAD_LIBS_INIT})
-# target_link_libraries(creational_patterns)
-# ${GTEST_LIBRARIES} pthread
+target_link_libraries(patterns_practice gtest ${CMAKE_THREAD_LIBS_INIT})

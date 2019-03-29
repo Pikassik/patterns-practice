@@ -1,10 +1,10 @@
 #include <headers/common-figures/Knight.h>
 
-std::vector<std::pair<int, int>> Knight::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& Knight::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> Knight::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& Knight::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

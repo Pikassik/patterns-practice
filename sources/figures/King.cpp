@@ -1,10 +1,10 @@
 #include <headers/common-figures/King.h>
 
-std::vector<std::pair<int, int>> King::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& King::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> King::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& King::GetPossibleDamaged() {
   return possible_damaged_;
 }
 

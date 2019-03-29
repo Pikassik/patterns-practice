@@ -18,19 +18,27 @@ void Unit::GetDamage(int damage) {
   }
 }
 
-bool Unit::GetColor() {
+bool Unit::GetColor() const {
   return color_;
 }
 
-std::vector<std::pair<int, int>> Unit::GetPossibleMoves() {
+int Unit::GetCurrentHP() const {
+  return health_points_;
+}
+
+int Unit::GetCurrentShield() const {
+  return shield_;
+}
+
+const std::vector<std::pair<int, int>>& Unit::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> Unit::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& Unit::GetPossibleDamaged() {
   return possible_damaged_;
 }
 
-bool Unit::IsDead() {
+bool Unit::IsDead() const {
   return is_dead_;
 }
 
@@ -64,6 +72,23 @@ void Unit::SetAttackDamage(int attack_damage) {
 
 void Unit::SetColor(bool color) {
   color_ = color;
+}
+
+void Unit::GetSelfHealing() {
+  health_points_ = std::min(health_points_ + self_healing_speed_,
+      max_health_points_);
+}
+
+void Unit::GetSelfShieldRecover() {
+  shield_ = std::min(shield_ + shield_recover_speed_, max_shield_);
+}
+
+void Unit::GetHealing(int hp) {
+  health_points_ = std::min(health_points_ + hp, max_health_points_);
+}
+
+void Unit::GetShield(int shield) {
+  shield_ = std::min(shield_ + shield, max_shield_);
 }
 
 const std::vector<std::pair<int, int>> Unit::possible_moves_ = {};

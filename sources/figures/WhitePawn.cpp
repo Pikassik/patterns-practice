@@ -1,10 +1,10 @@
 #include <headers/white-figures/WhitePawn.h>
 
-std::vector<std::pair<int, int>> WhitePawn::GetPossibleMoves() {
+const std::vector<std::pair<int, int>>& WhitePawn::GetPossibleMoves() {
   return possible_moves_;
 }
 
-std::vector<std::pair<int, int>> WhitePawn::GetPossibleDamaged() {
+const std::vector<std::pair<int, int>>& WhitePawn::GetPossibleDamaged() {
   return possible_damaged_;
 }
 
