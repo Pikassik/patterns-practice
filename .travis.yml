@@ -8,4 +8,4 @@ addons:
     packages:
     - cmake-data
     - cmake
-install: cmake patterns-practice && make
+install: ls && cmake patterns-practice && make
