@@ -1,5 +1,6 @@
 language: cpp
 compiler: gcc
+os: linux
 addons:
   apt:
     sources:
@@ -7,4 +8,4 @@ addons:
     packages:
     - cmake-data
     - cmake
-install: cmake && make
+install: cmake Pikassik/patterns-practice && make
