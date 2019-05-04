@@ -8,4 +8,4 @@ addons:
     packages:
     - cmake-data
     - cmake
-install: cmake Pikassik/patterns-practice && make
+install: cmake patterns-practice && make
