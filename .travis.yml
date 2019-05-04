@@ -7,3 +7,4 @@ addons:
     packages:
     - cmake-data
     - cmake
+install: make && cmake
