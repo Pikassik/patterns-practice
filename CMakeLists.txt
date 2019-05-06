@@ -1,11 +1,12 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.8)
 project(creational_patterns)
+include(gtest.cmake)
 
 set(CMAKE_CXX_STANDARD 14)
 
-find_package(GTest REQUIRED)
+# find_package(GTest REQUIRED)
 
-include_directories(${GTEST_INCLUDE_DIRS})
+# include_directories(${GTEST_INCLUDE_DIRS})
 
 
 
@@ -20,7 +21,7 @@ add_executable(creational_patterns main.cpp headers/Board.h
                 headers/common-figures/Bishop.h headers/common-figures/Queen.h
                 headers/common-figures/Pawn.h sources/figures/Bishop.cpp
                 sources/figures/King.cpp
-        sources/figures/Queen.cpp sources/figures/Rook.cpp
+                sources/figures/Queen.cpp sources/figures/Rook.cpp
                 headers/common-figures/Knight.h sources/figures/Knight.cpp
                 headers/black-figures/BlackBishop.h
                 headers/black-figures/BlackKing.h
@@ -78,4 +79,7 @@ add_executable(creational_patterns main.cpp headers/Board.h
                 sources/factories/WhiteFactory.cpp
                 sources/factories/BlackFactory.cpp tests/FiguresPossibleTest.cpp tests/SetterTest.cpp tests/BuildTest.cpp tests/SetterCmp.h tests/SetterCmp.cpp tests/FactoryTest.cpp tests/IsFigure.h tests/IsFigure.cpp tests/BoardTest.cpp)
 
-target_link_libraries(creational_patterns ${GTEST_LIBRARIES} pthread)
+find_package(Threads)
+target_link_libraries(gtest ${CMAKE_THREAD_LIBS_INIT})
+# target_link_libraries(creational_patterns)
+# ${GTEST_LIBRARIES} pthread
