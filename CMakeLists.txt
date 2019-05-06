@@ -80,6 +80,6 @@ add_executable(creational_patterns main.cpp headers/Board.h
                 sources/factories/BlackFactory.cpp tests/FiguresPossibleTest.cpp tests/SetterTest.cpp tests/BuildTest.cpp tests/SetterCmp.h tests/SetterCmp.cpp tests/FactoryTest.cpp tests/IsFigure.h tests/IsFigure.cpp tests/BoardTest.cpp)
 
 find_package(Threads)
-target_link_libraries(gtest ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(creational_patterns gtest ${CMAKE_THREAD_LIBS_INIT})
 # target_link_libraries(creational_patterns)
 # ${GTEST_LIBRARIES} pthread
