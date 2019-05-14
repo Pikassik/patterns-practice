@@ -17,4 +17,8 @@ before_install:
 - eval "${MATRIX_EVAL}"
 
 install: cmake . && make
+<<<<<<< HEAD
 script: ./patterns_practice
+=======
+script: ./creational_patterns
+>>>>>>> 719e8a08ad87ae67055c72d8dd6fdaad38c593bf
